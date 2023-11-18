@@ -1,1 +1,56 @@
 /* You can add global styles to this file, and also import other style files */
+//@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+
+body {
+    background-color: #EEEEEE;
+    font-size: 18px;
+    font-weight: 500;
+    font-family: 'Inter', sans-serif;
+}
+
+table {
+    width: 100%;
+}
+
+tr {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    vertical-align: top;
+    margin-top: 2.5px;
+    margin-bottom: 2.5px;
+    
+
+    td {
+        display: grid;
+        flex-direction: row;   
+        justify-content: left;
+    }
+
+    th {
+        display: grid;
+        flex-direction: row;   
+        justify-content: left;
+    }
+}
+
+
+.flex-between {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.center {
+    display: flex;
+    justify-content: center;
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+    width: 600px;
+}
+
+thead th {border-bottom: 1px solid #333; text-align: center; font-weight: bold;}
