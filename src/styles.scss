@@ -13,27 +13,22 @@ body {
 
 table {
   width: 100%;
+  border-collapse: collapse;
+}
+
+thead th {
+  text-align: left;
+  border-bottom: 1px solid #aaa;
+  padding: 10px;
 }
 
 tr {
-  border-bottom: 1px solid #aaa;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
   vertical-align: top;
-  margin-top: 2.5px;
-  margin-bottom: 2.5px;
 
   td {
-    display: grid;
-    flex-direction: row;
-    justify-content: left;
-  }
-
-  th {
-    display: grid;
-    flex-direction: row;
-    justify-content: left;
+    text-align: left;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
   }
 }
 
@@ -51,9 +46,4 @@ tr {
   display: flex;
   flex-direction: column;
   width: 600px;
-}
-
-thead th {
-  text-align: center;
-  font-weight: bold;
 }
