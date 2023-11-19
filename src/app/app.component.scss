@@ -13,6 +13,11 @@
     font-family: "Inter", sans-serif;
   }
 
+  input,
+  select {
+    margin-bottom: 15px;
+  }
+
   button {
     color: white;
     background-color: var(--accent);
