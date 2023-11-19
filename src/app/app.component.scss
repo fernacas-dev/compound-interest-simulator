@@ -1,34 +1,33 @@
-
-
 .compound-interest-form {
-    display: flex;
-    flex-direction: column;
-    
+  display: flex;
+  flex-direction: column;
 
-    input, select, button {
-        padding: 5px;
-        margin: 10px;
-        border-radius: 5px;
-        border-width: 1px;
-        font-size: 16px;
-        font-weight: 500;
-        font-family: 'Inter', sans-serif;
-    }
+  input,
+  select,
+  button {
+    padding: 5px;
+    margin: 10px;
+    border-radius: 5px;
+    border-width: 1px;
+    font-size: 16px;
+    font-weight: 500;
+    font-family: "Inter", sans-serif;
+  }
 
-    button {
-        background-color: #4DB6AC;
-        border: none;
-        padding-top: 10px;
-        padding-bottom: 10px;
-    }
+  button {
+    color: white;
+    background-color: var(--accent);
+    border: none;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
 
-    button:hover {
-        background-color: #26A69A;
-        
-    }
+  button:hover {
+    background-color: var(--accent);
+  }
 }
 
-.space-divider{
-    margin-top: 20px;
-    margin-bottom: 20px;
+.space-divider {
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
