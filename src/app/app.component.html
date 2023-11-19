@@ -1,19 +1,48 @@
 <div class="center">
   <div class="flex-column">
-    <form [formGroup]="calcForm" (ngSubmit)="onSubmit(calcForm)" class="compound-interest-form">
-      <input type="number" placeholder="Amount" formControlName="amount">
-      <input type="number" placeholder="Interest" formControlName="interest">
-      <input type="number" placeholder="Years" formControlName="years">
-      <input type="number" placeholder="Annual Increase" formControlName="annualIncrease">
-      <select formControlName="viewMode">
-        <option value="daily">Daily</option>
-        <option value="yearly">Yearly</option>
-      </select>
-      <button type="submit">Calculate</button>
-    </form>
-    
+    <app-card>
+      <form
+        [formGroup]="calcForm"
+        (ngSubmit)="onSubmit(calcForm)"
+        class="compound-interest-form"
+      >
+        <label for="Amount">Amount</label>
+        <input type="number" placeholder="Amount" formControlName="amount" />
+
+        <label for="Interest">Interest</label>
+        <input
+          type="number"
+          placeholder="Interest"
+          formControlName="interest"
+        />
+
+        <label for="Years">Years</label>
+        <input type="number" placeholder="Years" formControlName="years" />
+
+        <label for="Annual Increase">Annual Increase</label>
+        <input
+          type="number"
+          placeholder="Annual Increase"
+          formControlName="annualIncrease"
+        />
+
+        <label for="Annual Increase">Annual Increase</label>
+        <select formControlName="viewMode">
+          <option value="daily">Daily</option>
+          <option value="yearly">Yearly</option>
+        </select>
+
+        <div class="ml-auto">
+          <button type="submit">Calculate</button>
+        </div>
+      </form>
+    </app-card>
+
     <div class="space-divider"></div>
 
-    <app-compount-interest-table [viewMode]="viewMode" [interestTable]="interestTable"></app-compount-interest-table>
+    <app-compount-interest-table
+      [viewMode]="viewMode"
+      [interestTable]="interestTable"
+    ></app-compount-interest-table>
   </div>
 </div>
