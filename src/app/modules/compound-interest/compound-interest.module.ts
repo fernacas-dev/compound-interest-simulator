@@ -1,11 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CompountInterestTableComponent } from './components/compound-interest-table/compount-interest-table.component';
+import { CardComponent } from './components/card/card.component';
 import { CompoundInterestService } from './services/compound-interest.service';
 
 @NgModule({
   declarations: [
     CompountInterestTableComponent,
+    CardComponent
   ],
   imports: [
     CommonModule
@@ -14,7 +16,8 @@ import { CompoundInterestService } from './services/compound-interest.service';
     CompoundInterestService
   ],
   exports: [
-    CompountInterestTableComponent
+    CompountInterestTableComponent,
+    CardComponent
   ]
 })
 export class CompoundInterestModule { }
