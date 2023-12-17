@@ -6,6 +6,7 @@ import { CompoundInterestService } from './services/compound-interest.service';
 import { InterestDailyTableComponent } from './components/interest-daily-table/interest-daily-table.component';
 import { InterestYearlyTableComponent } from './components/interest-yearly-table/interest-yearly-table.component';
 import { CollapsableTabComponent } from './components/collapsable-tab/collapsable-tab.component';
+import { NgChartsModule, NgChartsConfiguration } from 'ng2-charts';
 
 @NgModule({
   declarations: [
@@ -16,10 +17,13 @@ import { CollapsableTabComponent } from './components/collapsable-tab/collapsabl
     CollapsableTabComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    NgChartsModule
   ],
   providers: [
-    CompoundInterestService
+    CompoundInterestService,
+    { provide: NgChartsConfiguration, useValue: { generateColors: false }},
+
   ],
   exports: [
     CompountInterestTableComponent,

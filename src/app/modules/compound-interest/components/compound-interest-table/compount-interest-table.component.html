@@ -1,4 +1,17 @@
 
+
+<canvas
+  *ngIf="isBrowser"
+  baseChart
+  class="chart"
+  [data]="lineChartData"
+  [options]="lineChartOptions"
+  [type]="lineChartType"
+  (chartHover)="chartHovered($event)"
+  (chartClick)="chartClicked($event)"
+></canvas>
+
+
 @if(viewMode === 'yearly'){
   <app-card>
     <app-interest-yearly-table
