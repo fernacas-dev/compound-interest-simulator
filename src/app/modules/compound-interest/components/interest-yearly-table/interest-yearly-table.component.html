@@ -1,0 +1,37 @@
+<table class="u-full-width">
+  <thead>
+    <tr>
+      @if(viewMode == 'yearly'){
+      <th>
+        Year
+      </th>
+      } @else {
+      <th>
+        Day
+      </th>
+      }
+      <th>
+        Amount
+      </th>
+      <th>
+        Interest
+      </th>
+      @if(viewMode == 'yearly'){
+      <th>
+        Interest Monthly
+      </th>
+      }
+
+    </tr>
+  </thead>
+  <tbody>
+    @for (data of interestTable; track $index) {
+      <tr>
+        <td>{{($index+1)}}</td>
+        <td>{{ data[$index+1][data[$index+1].length-1].total| currency }}</td>
+        <td>{{ data[$index+1][data[$index+1].length-1].interest| currency }}</td>
+        <td>{{ data[$index+1][data[$index+1].length-1].interestMonthly| currency }}</td>
+    </tr>
+    }
+  </tbody>
+</table>

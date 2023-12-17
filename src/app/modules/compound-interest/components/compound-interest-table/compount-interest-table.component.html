@@ -1,52 +1,21 @@
-<table class="u-full-width">
-  <thead>
-    <tr>
-      @if(viewMode == 'yearly'){
-      <th>
-        Year
-      </th>
-      } @else {
-      <th>
-        Day
-      </th>
-      }
-      <th>
-        Amount
-      </th>
-      <th>
-        Interest
-      </th>
-      @if(viewMode == 'yearly'){
-      <th>
-        Interest Monthly
-      </th>
-      }
 
-    </tr>
-  </thead>
-  <tbody>
-    @for (data of interestTable; track $index) {
-    @if(viewMode == 'yearly'){
-    <tr>
-      <td>{{($index+1)}}</td>
-      <td>{{ data[$index+1][data[$index+1].length-1].total| currency }}</td>
-      <td>{{ data[$index+1][data[$index+1].length-1].interest| currency }}</td>
-      <td>{{ data[$index+1][data[$index+1].length-1].interestMonthly| currency }}</td>
-    </tr>
-    } @else {
-    @for(day of data[($index+1)]; track $index){
-    <tr>
-      <td>{{($index+1)}}</td>
-      <td>{{day.total| currency}}</td>
-      <td>{{day.interestAcc| currency}}</td>
-    </tr>
-    }
-    <tr>
-      <td width="100%">
-        <hr width="100%">
-      </td>
-    </tr>
-    }
-    }
-  </tbody>
-</table>
+@if(viewMode === 'yearly'){
+  <app-card>
+    <app-interest-yearly-table
+      [viewMode]="viewMode"
+      [interestTable]="interestTable"
+    ></app-interest-yearly-table>
+  </app-card>
+} @else {
+
+  @for (data of interestTable; track $index) {
+    <app-collapsable-tab [tabTitle]="'Year ' + ($index+1).toString()">
+      <app-card>
+        <app-interest-daily-table
+          [data]="data"
+          [index]="$index"
+        ></app-interest-daily-table>
+      </app-card>
+    </app-collapsable-tab>
+  }
+}

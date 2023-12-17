@@ -1,13 +1,13 @@
 import { Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-compount-interest-table',
-  templateUrl: './compount-interest-table.component.html',
-  styleUrl: './compount-interest-table.component.scss'
+  selector: 'app-interest-yearly-table',
+  templateUrl: './interest-yearly-table.component.html',
+  styleUrl: './interest-yearly-table.component.scss'
 })
-export class CompountInterestTableComponent {
+export class InterestYearlyTableComponent {
+
   @Input() interestTable: {[x:number]: {total: number, interest: number, interestAcc: number, interestMonthly: number}[]}[]  = [];
   @Input() viewMode: 'daily' | 'yearly' = 'yearly';
 
-  dailyTableClass="mx-3";
 }
