@@ -51,5 +51,11 @@ tr {
 .flex-column {
   display: flex;
   flex-direction: column;
-  width: 600px;
+  margin: 1%;
+}
+
+@media only screen and (min-width: 600px){
+  .flex-column {
+    width: 600px;
+  }
 }
