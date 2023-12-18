@@ -7,7 +7,8 @@ import { Component, Input } from '@angular/core';
 })
 export class InterestYearlyTableComponent {
 
-  @Input() interestTable: {[x:number]: {total: number, interest: number, interestAcc: number, interestMonthly: number}[]}[]  = [];
   @Input() viewMode: 'daily' | 'yearly' = 'yearly';
+
+  @Input() interestTable: {[x:number]: {total: number, interest: number, interestAcc: number, interestMonthly: number}[]}[]  = [];
 
 }

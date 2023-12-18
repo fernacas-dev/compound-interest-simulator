@@ -7,6 +7,7 @@ import { InterestDailyTableComponent } from './components/interest-daily-table/i
 import { InterestYearlyTableComponent } from './components/interest-yearly-table/interest-yearly-table.component';
 import { CollapsableTabComponent } from './components/collapsable-tab/collapsable-tab.component';
 import { NgChartsModule, NgChartsConfiguration } from 'ng2-charts';
+import { InterestChartComponent } from './components/interest-chart/interest-chart.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { NgChartsModule, NgChartsConfiguration } from 'ng2-charts';
     CardComponent,
     InterestDailyTableComponent,
     InterestYearlyTableComponent,
-    CollapsableTabComponent
+    CollapsableTabComponent,
+    InterestChartComponent
   ],
   imports: [
     CommonModule,
