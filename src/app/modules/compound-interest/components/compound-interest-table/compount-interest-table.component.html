@@ -6,11 +6,12 @@
     ></app-interest-yearly-table>
   </app-card>
 
-  <app-interest-chart
-    [interestTable]="interestTable"
-  >
-
-  </app-interest-chart>
+  <app-card>
+    <app-interest-chart
+      [interestTable]="interestTable"
+    >
+    </app-interest-chart>
+  </app-card>
 } @else {
 
   @for (data of interestTable; track $index) {
