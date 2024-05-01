@@ -25,6 +25,11 @@
     </tr>
   </thead>
   <tbody>
+    @if(!data?.length){
+      <tr>
+        <td>No compound calculated yet. Click on the Calculate button on the form!</td>
+      </tr>
+    }
     @for (data of interestTable; track $index) {
       <tr>
         <td>{{($index+1)}}</td>
