@@ -24,7 +24,7 @@ import { InterestChartComponent } from './components/interest-chart/interest-cha
   ],
   providers: [
     CompoundInterestService,
-    { provide: NgChartsConfiguration, useValue: { generateColors: false }},
+    { provide: NgChartsConfiguration, useValue: { generateColors: false } },
 
   ],
   exports: [
