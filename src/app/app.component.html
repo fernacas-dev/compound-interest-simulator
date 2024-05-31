@@ -1,32 +1,20 @@
 <div class="center">
   <div class="flex-column">
     <div class="flex-column">
-      <h1>Compound interest calculator</h1>
+      <h1>Compound interest rate calculator</h1>
       <app-card>
-        <form
-          [formGroup]="calcForm"
-          (ngSubmit)="onSubmit(calcForm)"
-          class="compound-interest-form"
-        >
+        <form [formGroup]="calcForm" (ngSubmit)="onSubmit(calcForm)" class="compound-interest-form">
           <label for="Amount">Amount</label>
           <input type="number" placeholder="Amount" formControlName="amount" />
 
           <label for="Interest">Interest</label>
-          <input
-            type="number"
-            placeholder="Interest"
-            formControlName="interest"
-          />
+          <input type="number" placeholder="Interest" formControlName="interest" />
 
           <label for="Years">Years</label>
           <input type="number" placeholder="Years" formControlName="years" />
 
           <label for="Annual Increase">Annual Increase</label>
-          <input
-            type="number"
-            placeholder="Annual Increase"
-            formControlName="annualIncrease"
-          />
+          <input type="number" placeholder="Annual Increase" formControlName="annualIncrease" />
 
           <label for="View Mode">View Mode</label>
           <select formControlName="viewMode">
@@ -41,10 +29,6 @@
       <div class="space-divider"></div>
     </div>
 
-    <app-compount-interest-table
-        [viewMode]="viewMode"
-        [interestTable]="interestTable"
-    ></app-compount-interest-table>
+    <app-compount-interest-table [viewMode]="viewMode" [interestTable]="interestTable"></app-compount-interest-table>
   </div>
-
 </div>

@@ -1,13 +1,13 @@
 <table class="u-full-width">
   <thead>
     <tr>
-      <th>
+      <th scope="col">
         Day
       </th>
-      <th>
+      <th scope="col">
         Amount
       </th>
-      <th>
+      <th scope="col">
         Interest
       </th>
     </tr>
@@ -15,11 +15,11 @@
   <tbody>
 
     @for(day of data[index+1]; track $index){
-      <tr>
-        <td>{{($index+1)}}</td>
-        <td>{{day.total| currency}}</td>
-        <td>{{day.interestAcc| currency}}</td>
-      </tr>
+    <tr>
+      <td>{{($index+1)}}</td>
+      <td>{{day.total| currency}}</td>
+      <td>{{day.interestAcc| currency}}</td>
+    </tr>
     }
   </tbody>
 </table>

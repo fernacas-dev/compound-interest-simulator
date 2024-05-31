@@ -1,8 +1,12 @@
 .card {
-  border-radius: 4px; /* rounded corners */
-  overflow: hidden; /* ensures content respects the rounded corners */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* subtle shadow */
-  transition: transform 0.2s; /* smooth hover effect */
+  border-radius: 4px;
+  /* rounded corners */
+  overflow: hidden;
+  /* ensures content respects the rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  /* subtle shadow */
+  transition: transform 0.2s;
+  /* smooth hover effect */
   background-color: white;
   margin-top: 30px;
   margin-bottom: 30px;
@@ -13,5 +17,6 @@
 }
 
 .card:hover {
-  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1); /* subtle shadow */
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
+  /* subtle shadow */
 }

@@ -1,26 +1,14 @@
 @if(viewMode === 'yearly'){
-  <app-card>
-    <app-interest-yearly-table
-      [viewMode]="viewMode"
-      [interestTable]="interestTable"
-    ></app-interest-yearly-table>
-  </app-card>
-
-  <app-interest-chart
-    [interestTable]="interestTable"
-  >
-
-  </app-interest-chart>
+<app-card>
+  <app-interest-yearly-table [viewMode]="viewMode" [interestTable]="interestTable"></app-interest-yearly-table>
+</app-card>
 } @else {
 
-  @for (data of interestTable; track $index) {
-    <app-collapsable-tab [tabTitle]="'Year ' + ($index+1).toString()">
-      <app-card>
-        <app-interest-daily-table
-          [data]="data"
-          [index]="$index"
-        ></app-interest-daily-table>
-      </app-card>
-    </app-collapsable-tab>
-  }
+@for (data of interestTable; track $index) {
+<app-collapsable-tab [tabTitle]="'Year ' + ($index+1).toString()">
+  <app-card>
+    <app-interest-daily-table [data]="data" [index]="$index"></app-interest-daily-table>
+  </app-card>
+</app-collapsable-tab>
+}
 }
