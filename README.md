@@ -4,6 +4,10 @@
 
 The **Compound Interest Rate Simulator** is a simple and user-friendly Angular application designed to help users calculate the future value of their investments based on the principles of compound interest. Whether you're planning your savings, investments, or retirement fund, this app provides an easy way to estimate how much your money can grow over time with compound interest.
 
+
+
+![image](screenshot.png)
+
 ## Features
 
 - **Easy Input**: Enter the principal amount, interest rate, compounding frequency, and the investment period.
