@@ -1,0 +1,143 @@
+/* Resultados y sección de datos */
+.results-section {
+  .financial-highlights-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .highlight-card {
+    /* Fondo con gradiente más definido */
+    background: linear-gradient(145deg, var(--primary), rgba(0, 0, 0, 0.8));
+    border-radius: var(--radius-md);
+    padding: 2rem 1.5rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    overflow: hidden;
+    position: relative;
+    transition: all var(--transition-normal);
+    
+    /* Efecto de resplandor en el borde superior */
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 20%;
+      width: 60%;
+      height: 2px;
+      background: linear-gradient(to right, transparent, var(--accent), transparent);
+      opacity: 0.7;
+    }
+    
+    /* Efecto de luz interior */
+    &::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle at center, var(--accent) 0%, transparent 30%);
+      opacity: 0.05;
+      z-index: -1;
+    }
+    
+    &:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5), 0 0 0 1px var(--accent);
+      
+      .highlight-value {
+        color: white;
+        text-shadow: 0 0 15px var(--accent);
+      }
+      
+      &::after {
+        opacity: 0.1;
+      }
+    }
+    
+    .highlight-value {
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: white;
+      margin-bottom: 0.8rem;
+      text-shadow: 0 0 15px rgba(0, 224, 255, 0.7);
+      letter-spacing: -0.5px;
+      position: relative;
+      z-index: 2;
+      animation: textGlow 3s ease-in-out infinite alternate;
+      background: linear-gradient(90deg, rgba(255, 255, 255, 1), rgba(0, 224, 255, 1), rgba(255, 255, 255, 1));
+      background-size: 200% auto;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      color: transparent;
+      animation: shimmer 3s linear infinite;
+    }
+    
+    .highlight-label {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--subtext);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      z-index: 2;
+    }
+    
+    &.highlight-percentage {
+      background: linear-gradient(145deg, var(--accent), rgba(0, 50, 80, 0.9));
+      
+      .highlight-value {
+        color: white;
+        text-shadow: 0 0 15px rgba(255, 255, 255, 0.7);
+      }
+      
+      .highlight-label {
+        color: rgba(255, 255, 255, 0.8);
+      }
+    }
+  }
+  
+  .simulation-summary {
+    background-color: rgba(5, 10, 15, 0.85);
+    border-radius: var(--radius-md);
+    padding: 1.5rem;
+    border: 1px solid var(--border);
+    margin-top: 1rem;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    position: relative;
+    
+    /* Línea decorativa */
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 4px;
+      background: linear-gradient(to bottom, var(--primary), var(--accent));
+      border-radius: var(--radius-md) 0 0 var(--radius-md);
+    }
+    
+    p {
+      margin: 0;
+      color: var(--subtext);
+      line-height: 1.8;
+      font-size: 1.05rem;
+      padding-left: 1rem;
+      
+      strong {
+        color: white;
+        font-weight: 600;
+        text-shadow: 0 0 10px rgba(0, 224, 255, 0.4);
+      }
+    }
+  }
+}

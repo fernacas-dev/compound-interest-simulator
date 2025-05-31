@@ -1,0 +1,31 @@
+/* Contenedor del fondo estrellado */
+.starfield-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -2;
+  background: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%);
+  
+  &::before, &::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-image: 
+      radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 5px), 
+      radial-gradient(white, rgba(255,255,255,.15) 1px, transparent 3px), 
+      radial-gradient(white, rgba(255,255,255,.1) 2px, transparent 5px);
+    background-size: 550px 550px, 350px 350px, 250px 250px;
+    background-position: 0 0, 40px 60px, 130px 270px;
+  }
+  
+  &::after {
+    opacity: 0.5;
+    animation: starMovement 90s linear infinite;
+  }
+}

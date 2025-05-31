@@ -1,0 +1,26 @@
+// Archivo principal de estilos que importa todos los módulos
+
+// Abstracts
+@import 'abstracts/variables';
+@import 'abstracts/animations';
+@import 'abstracts/mixins';
+
+// Base
+@import 'base/reset';
+@import 'base/typography';
+
+// Themes
+@import 'themes/starfield';
+
+// Layout
+@import 'layout/header';
+@import 'layout/main';
+@import 'layout/calculator';
+@import 'layout/responsive';
+
+// Components
+@import 'components/forms';
+@import 'components/buttons';
+@import 'components/cards';
+@import 'components/tables';
+@import 'components/highlights';

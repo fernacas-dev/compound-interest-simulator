@@ -1,0 +1,35 @@
+// Variables globales
+:root {
+  // Colores
+  --primary: #0a192f;
+  --secondary: #112240;
+  --text-color: #e6f1ff;
+  --subtext: #8892b0;
+  
+  --accent: #00e0ff;
+  --form-label: #00e0ff;
+  --form-border: rgba(0, 224, 255, 0.3);
+  --form-focus: #00e0ff;
+  --form-placeholder: #8892b0;
+  --form-bg: rgba(5, 10, 15, 0.85);
+  
+  --danger: #ff4d4d;
+  
+  --primary-button: #0075cc;
+  --primary-button-hover: #0099ff;
+  
+  --card-dark-blue: #051525;
+  --card-medium-blue: #0a2540;
+  --card-light-blue: #00e0ff;
+  
+  --border: rgba(0, 224, 255, 0.3);
+  
+  // Radios
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  
+  // Transiciones
+  --transition-fast: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}

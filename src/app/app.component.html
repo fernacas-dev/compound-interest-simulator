@@ -1,34 +1,118 @@
-<div class="center">
-  <div class="flex-column">
-    <div class="flex-column">
-      <h1>Compound interest rate calculator</h1>
-      <app-card>
+<div class="starfield-container">
+  <!-- Estrellas y efectos de fondo se añadirán con CSS -->
+</div>
+
+<header class="app-header">
+  <h1>Compound Interest Simulator</h1>
+  <p class="subtitle">Project your financial future with precision and style</p>
+</header>
+
+<main>
+  <div class="calculator-grid">
+    <div class="calculator-section">
+      <div class="calculator-form-card">
         <form [formGroup]="calcForm" (ngSubmit)="onSubmit(calcForm)" class="compound-interest-form">
-          <label for="Amount">Amount</label>
-          <input type="number" placeholder="Amount" formControlName="amount" />
+          <div class="form-fields">
+            <div class="form-row">
+              <div class="input-group">
+                <label for="amount">INITIAL INVESTMENT</label>
+                <div class="input-with-prefix">
+                  <span class="prefix">$</span>
+                  <input id="amount" type="number" placeholder="1000" formControlName="amount" />
+                </div>
+                <div *ngIf="calcForm.get('amount')?.invalid && calcForm.get('amount')?.touched" class="error-message">
+                  Please enter a valid amount greater than zero.
+                </div>
+              </div>
 
-          <label for="Interest">Interest</label>
-          <input type="number" placeholder="Interest" formControlName="interest" />
+              <div class="input-group">
+                <label for="interest">ANNUAL RETURN RATE (%)</label>
+                <input id="interest" type="number" step="0.01" placeholder="5" formControlName="interest" />
+                <div *ngIf="calcForm.get('interest')?.invalid && calcForm.get('interest')?.touched" class="error-message">
+                  Please enter a valid interest rate.
+                </div>
+              </div>
+            </div>
 
-          <label for="Years">Years</label>
-          <input type="number" placeholder="Years" formControlName="years" />
+            <div class="form-row">
+              <div class="input-group">
+                <label for="years">TIME HORIZON (YEARS)</label>
+                <input id="years" type="number" placeholder="5" formControlName="years" />
+                <div *ngIf="calcForm.get('years')?.invalid && calcForm.get('years')?.touched" class="error-message">
+                  Please enter a valid period between 1-50 years.
+                </div>
+              </div>
 
-          <label for="Annual Increase">Annual Increase</label>
-          <input type="number" placeholder="Annual Increase" formControlName="annualIncrease" />
+              <div class="input-group">
+                <label for="annualIncrease">ANNUAL CONTRIBUTION</label>
+                <div class="input-with-prefix">
+                  <span class="prefix">$</span>
+                  <input id="annualIncrease" type="number" placeholder="1000" formControlName="annualIncrease" />
+                </div>
+              </div>
+            </div>
 
-          <label for="View Mode">View Mode</label>
-          <select formControlName="viewMode">
-            <option value="daily">Daily</option>
-            <option value="yearly">Yearly</option>
-          </select>
-
-          <button type="submit">Calculate</button>
+            <div class="form-row">
+              <div class="input-group full-width">
+                <label for="viewMode">DATA RESOLUTION</label>
+                <select id="viewMode" formControlName="viewMode">
+                  <option value="yearly">Yearly Summary</option>
+                  <option value="daily">Daily Precision</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          
+          <div class="form-actions">
+            <button type="submit" class="calculate-btn">CALCULATE GROWTH</button>
+            <button type="button" class="reset-btn" (click)="resetForm()">RESET VALUES</button>
+          </div>
         </form>
-      </app-card>
-
-      <div class="space-divider"></div>
+      </div>
     </div>
 
+    <div class="results-section" *ngIf="isCalculated && !hasError">
+      <div class="financial-highlights-container">
+        <div class="highlight-card">
+          <div class="highlight-value">{{finalAmount | currency}}</div>
+          <div class="highlight-label">Final Portfolio Value</div>
+        </div>
+        <div class="highlight-card">
+          <div class="highlight-value">{{totalContributions | currency}}</div>
+          <div class="highlight-label">Total Capital Invested</div>
+        </div>
+        <div class="highlight-card">
+          <div class="highlight-value">{{totalInterest | currency}}</div>
+          <div class="highlight-label">Total Interest Earned</div>
+        </div>
+        <div class="highlight-card highlight-percentage">
+          <div class="highlight-value">{{(totalInterest / totalContributions * 100) | number:'1.0-0'}}%</div>
+          <div class="highlight-label">Return on Investment</div>
+        </div>
+      </div>
+
+      <div class="simulation-summary">
+        <p>
+          Your initial investment of <strong>{{calcForm.value.amount | currency}}</strong> with <strong>{{calcForm.value.interest}}%</strong> annual interest 
+          and <strong>{{calcForm.value.annualIncrease | currency}}</strong> yearly contributions over <strong>{{calcForm.value.years}}</strong> years.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="isCalculated && !hasError" class="data-display-container">
+    <div class="data-header">
+      <h2>Investment Growth Analysis</h2>
+      <div class="view-toggle">
+        <span [class.active]="viewMode === 'yearly'" (click)="setViewMode('yearly')">Yearly</span>
+        <span [class.active]="viewMode === 'daily'" (click)="setViewMode('daily')">Daily</span>
+      </div>
+    </div>
     <app-compount-interest-table [viewMode]="viewMode" [interestTable]="interestTable"></app-compount-interest-table>
   </div>
-</div>
+
+  <div *ngIf="hasError" class="error-container">
+    <div class="error-icon">!</div>
+    <p class="error-message">{{errorMessage}}</p>
+  </div>
+</main>

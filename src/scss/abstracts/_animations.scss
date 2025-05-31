@@ -1,0 +1,39 @@
+/* Animaciones para efectos visuales */
+@keyframes textGlow {
+  0% {
+    filter: drop-shadow(0 0 2px rgba(0, 224, 255, 0.3));
+  }
+  100% {
+    filter: drop-shadow(0 0 12px rgba(0, 224, 255, 0.8));
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(0, 224, 255, 0.5);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(0, 224, 255, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(0, 224, 255, 0);
+  }
+}
+
+@keyframes starMovement {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-2000px);
+  }
+}

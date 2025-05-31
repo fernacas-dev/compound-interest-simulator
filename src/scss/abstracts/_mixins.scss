@@ -1,0 +1,31 @@
+// Mixins útiles para reutilizar en la aplicación
+
+// Mixin para efecto de borde brillante
+@mixin glowing-border($color: var(--accent), $opacity: 0.5) {
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, $color, transparent);
+    opacity: $opacity;
+    z-index: 1;
+  }
+}
+
+// Mixin para fondo con blur
+@mixin glass-effect($background-color: rgba(5, 15, 25, 0.4)) {
+  backdrop-filter: blur(10px);
+  background: $background-color;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+// Mixin para efecto de hover con elevación
+@mixin hover-lift($y-offset: -3px, $shadow: 0 6px 20px rgba(0, 0, 0, 0.4)) {
+  &:hover {
+    transform: translateY($y-offset);
+    box-shadow: $shadow;
+  }
+}

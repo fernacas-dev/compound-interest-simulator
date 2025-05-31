@@ -1,0 +1,32 @@
+// Estilos tipográficos globales
+h1 {
+  color: var(--text);
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 700;
+  letter-spacing: -1px;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  background: linear-gradient(to right, var(--text), var(--accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent; // Fallback para text-fill-color
+  animation: textGlow 3s ease-in-out infinite alternate;
+}
+
+.subtitle {
+  color: var(--subtext);
+  font-size: 1.2rem;
+  font-weight: 300;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.5;
+}
+
+// Estilos específicos para números en tablas
+td {
+  &:not(:first-child) {
+    text-align: right;
+    font-family: 'Roboto Mono', monospace;
+  }
+}

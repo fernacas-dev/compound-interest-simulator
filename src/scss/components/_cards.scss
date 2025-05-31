@@ -1,0 +1,73 @@
+/* Futuristic card styling */
+app-card {
+  background: var(--form-bg);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3), 0 0 30px rgba(0, 137, 204, 0.15);
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 224, 255, 0.1);
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+  margin-bottom: 1.5rem;
+  position: relative;
+  
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4), 0 0 30px rgba(0, 137, 204, 0.25);
+  }
+  
+  /* Borde superior para todas las cards */
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--form-label), transparent);
+    opacity: 0.5;
+    z-index: 1;
+  }
+  
+  /* Estilizando el contenedor de la tabla de resultados */
+  .card-body {
+    padding: 1.5rem;
+    background: linear-gradient(125deg, rgba(3, 25, 40, 0.95), rgba(5, 5, 15, 0.98));
+    position: relative;
+    border-radius: var(--radius-md);
+    box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.7);
+    overflow: hidden;
+    
+    /* Efecto de brillo en la esquina */
+    &::before {
+      content: '';
+      position: absolute;
+      top: -50px;
+      left: -50px;
+      width: 100px;
+      height: 100px;
+      background: radial-gradient(circle, rgba(0, 224, 255, 0.15), transparent 70%);
+      opacity: 0.5;
+      z-index: 0;
+    }
+    
+    /* Borde luminoso izquierdo */
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+      background: linear-gradient(to bottom, var(--form-label), var(--card-light-blue));
+      box-shadow: 0 0 15px rgba(0, 224, 255, 0.5);
+      opacity: 0.7;
+      z-index: 1;
+    }
+    
+    /* Patrón de rejilla futurista */
+    background-image: 
+      linear-gradient(0deg, transparent 24%, rgba(0, 224, 255, 0.03) 25%, rgba(0, 224, 255, 0.03) 26%, transparent 27%, transparent 74%, rgba(0, 224, 255, 0.03) 75%, rgba(0, 224, 255, 0.03) 76%, transparent 77%, transparent),
+      linear-gradient(90deg, transparent 24%, rgba(0, 224, 255, 0.03) 25%, rgba(0, 224, 255, 0.03) 26%, transparent 27%, transparent 74%, rgba(0, 224, 255, 0.03) 75%, rgba(0, 224, 255, 0.03) 76%, transparent 77%, transparent);
+    background-size: 50px 50px;
+  }
+}
